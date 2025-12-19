@@ -24,9 +24,25 @@ export class AppComponent implements OnInit {
     this.loadSeasons();
   }
 
+  loadSeenEpisodes() {
+    const seen = localStorage.getItem('seenEpisodes');
+    if (seen) {
+      const seenNumbers = JSON.parse(seen);
+      this.episodes.forEach(ep => {
+        ep.seen = seenNumbers.includes(ep.number);
+      });
+    }
+  }
+
+  saveSeenEpisodes() {
+    const seenNumbers = this.episodes.filter(ep => ep.seen).map(ep => ep.number);
+    localStorage.setItem('seenEpisodes', JSON.stringify(seenNumbers));
+  }
+
   loadSeasons() {
     this.http.get<SeriesData>('assets/seasons.json').subscribe(data => {
       this.generateEpisodes(data.seasons);
+      this.loadSeenEpisodes();
       this.filteredEpisodes = this.episodes;
     });
   }
@@ -40,7 +56,8 @@ export class AppComponent implements OnInit {
           number: episodeCounter,
           title: `${season.title} - Episode ${i}`,
           embedUrl: `site:trueid.net One Piece EP ${episodeNum} embed`,
-          imageUrl: img
+          imageUrl: img,
+          seen: false
         });
         episodeCounter++;
       }
@@ -59,6 +76,8 @@ export class AppComponent implements OnInit {
   }
 
   playEpisode(episode: Episode) {
+    episode.seen = true;
+    this.saveSeenEpisodes();
     const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(episode.embedUrl)}`;
     window.open(googleSearchUrl, '_blank');
   }

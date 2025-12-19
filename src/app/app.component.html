@@ -8,7 +8,7 @@
   
   <main class="main">
     <div class="episodes-grid">
-      <div *ngFor="let episode of filteredEpisodes" class="episode-card" (click)="playEpisode(episode)">
+      <div *ngFor="let episode of filteredEpisodes" class="episode-card" [class.seen]="episode.seen" (click)="playEpisode(episode)">
         <div class="episode-image">
           <img [src]="episode.imageUrl" [alt]="'Episode ' + episode.number" loading="lazy">
           <div class="play-overlay">

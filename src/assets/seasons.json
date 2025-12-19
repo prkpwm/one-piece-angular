@@ -5,7 +5,7 @@
       "title": "East Blue Saga",
       "episodes": 61,
       "images": [
-        "https://lexinehiggins.wordpress.com/wp-content/uploads/2023/09/season-1.jpg?w=718",
+        "https://m.media-amazon.com/images/M/MV5BODVkNmExYmMtY2MyYS00NzZiLWE3NjUtZDI4ZWY4NGRmZDVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         "https://i.pinimg.com/736x/ae/08/e2/ae08e21372651c4a04913a8e6211cb49.jpg",
         "https://i.pinimg.com/736x/d1/9b/05/d19b05aa7a8c8c8883a82a7a99f8e60e.jpg",
         "https://spinesofgolden.wordpress.com/wp-content/uploads/2015/06/zoro.jpg?w=584"
@@ -168,6 +168,46 @@
         "https://images.justwatch.com/poster/304340302/s718/season-21.jpg",
         "https://m.media-amazon.com/images/I/61P-kTLkb5L._AC_UF894,1000_QL80_.jpg",
         "https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg?quality=75&w=1250"
+      ]
+    },
+    {
+      "season": 18,
+      "title": "Egghead Island (Future Island Arc)",
+      "episodes": 65,
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/en/2/21/One_Piece_DVD_21.png",
+        "https://i.pinimg.com/736x/f2/fc/b0/f2fcb00565da405d54597adfe6ff090b.jpg",
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/egghead-island-design-one-piece-featured.jpg?fit=crop&h=900&w=1600"
+      ]
+    },
+    {
+      "season": 19,
+      "title": "Egghead Incident / CP0",
+      "episodes": 45,
+      "images": [
+        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/11/cp0.jpg",
+        "https://i.ebayimg.com/images/g/ux8AAOSwJAtnMlV-/s-l1200.jpg",
+        "https://titipjepang.com/wp-content/uploads/2025/05/POTJ-0525450.jpg"
+      ]
+    },
+    {
+      "season": 20,
+      "title": "World in Chaos (Reverie Aftermath)",
+      "episodes": 30,
+      "images": [
+        "https://comicbook.com/wp-content/uploads/sites/4/2025/02/One-Piece-Mural.jpeg?w=1024",
+        "https://i.imgur.com/6MqCp4T.png",
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/05/one-piece-imu-gender-woman-man-lily-vivi.jpg?fit=crop&h=900&w=1600"
+      ]
+    },
+    {
+      "season": 21,
+      "title": "Yonko & Final Saga Setup",
+      "episodes": 40,
+      "images": [
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/07/one-piece-final-saga-key-players.jpg",
+        "https://i.ytimg.com/vi/LSLL0zXzfOk/maxresdefault.jpg",
+        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/11/featured-one-piece-episode-1082-shanks-power.jpg"
       ]
     }
   ]

@@ -3,4 +3,5 @@ export interface Episode {
   title: string;
   embedUrl: string;
   imageUrl: string;
+  seen: boolean;
 }
