@@ -23,7 +23,7 @@ jobs:
       run: npm install
       
     - name: Build
-      run: npm run build
+      run: npm run build -- --base-href=/one-piece-angular/
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
