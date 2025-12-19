@@ -95,9 +95,7 @@
       "title": "Thriller Bark",
       "episodes": 45,
       "images": [
-        "https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/f0/7e7e34b3da5ca198ad5e5e9b49da57d0_300x442.jpg?t=1697100001",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/01/gecko-moria-lesson.jpg?fit=crop&h=1200&w=1600",
-        "https://upload.wikimedia.org/wikipedia/en/5/54/Soul_King_Brook.png"
+        "https://media.themoviedb.org/t/p/w500/gCWPlCfElGdGtl6xryoyXcadNd9.jpg"
       ]
     },
     {
@@ -105,8 +103,8 @@
       "title": "Summit War Saga",
       "episodes": 132,
       "images": [
-        "https://static.tvtropes.org/pmwiki/pub/images/screen_shot_2018_05_12_at_81621_am.png",
         "https://i.ytimg.com/vi/hhHhe1G5gSE/maxresdefault.jpg",
+        "https://static.tvtropes.org/pmwiki/pub/images/screen_shot_2018_05_12_at_81621_am.png",
         "https://images.steamusercontent.com/ugc/913541295204675301/77EB83314CA85E2C4D15C20244AFDE6688805C08/?ima=fit&imcolor=%23000000&impolicy=Letterbox&imw=512&letterbox=false"
       ]
     },
@@ -125,9 +123,7 @@
       "title": "Punk Hazard",
       "episodes": 54,
       "images": [
-        "https://i.ytimg.com/vi/l0RNVZ3CmhY/maxresdefault.jpg",
-        "https://static.wixstatic.com/media/2753fe_a026a4b077a8496d93f16daf13c90391~mv2.png/v1/fill/w_568,h_454,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2753fe_a026a4b077a8496d93f16daf13c90391~mv2.png",
-        "https://i.ytimg.com/vi/NeUXI2Za41c/maxresdefault.jpg"
+        "./assets/Punk Hazard.jpg"
       ]
     },
     {
@@ -135,9 +131,7 @@
       "title": "Dressrosa",
       "episodes": 118,
       "images": [
-        "https://www.whats-on-netflix.com/wp-content/uploads/2025/01/one-piece-dressrosa-arc-is-coming-to-netflix-in-february.jpg",
-        "https://static.wikitide.net/sexypediawiki/3/30/Doflamingo.webp",
-        "https://cdn.oneesports.gg/cdn-data/2024/01/Anime_OnePiece_MonkeyDLuffy_Gear4.jpg"
+        "./assets/Dressrosa.jpg"
       ]
     },
     {
@@ -145,9 +139,7 @@
       "title": "Zou",
       "episodes": 36,
       "images": [
-        "https://static0.polygonimages.com/wordpress/wp-content/uploads/2025/09/one-piece-zou-arc.jpg?fit=crop&h=900&w=1200",
-        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2020/03/Minks-Featured.jpg",
-        "https://i.ytimg.com/vi/12RYC19KmCw/oar2.jpg?rs=AOn4CLD486Ze1OZ_7MpxKh8vLFgH0Fb9Cg&sqp=-oaymwEYCJUDENAFSFqQAgHyq4qpAwcIARUAAIhC"
+        "./assets/Zou.png"
       ]
     },
     {
@@ -155,9 +147,7 @@
       "title": "Whole Cake Island",
       "episodes": 95,
       "images": [
-        "https://images.plex.tv/photo?scale=1&size=large-1920&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F59G8pVHbFqSuAQAitdK9CKGAZXX.jpg",
-        "https://awsimages.detik.net.id/community/media/visual/2022/02/11/big-mom-di-manga-one-piece-1040.jpeg?w=1200",
-        "https://i.ytimg.com/vi/wz1H3jxl_tA/maxresdefault.jpg"
+        "./assets/Whole Cake Island.jpg"
       ]
     },
     {
