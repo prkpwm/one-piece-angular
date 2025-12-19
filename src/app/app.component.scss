@@ -27,25 +27,55 @@
     background-clip: text;
   }
   
-  .search input {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.15);
-    color: white;
-    padding: 10px 16px;
-    border-radius: 12px;
-    width: 280px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+  .controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
     
-    &:focus {
-      outline: none;
-      border-color: rgba(255,107,107,0.4);
-      box-shadow: 0 0 15px rgba(255,107,107,0.15);
+    input {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      width: 280px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: rgba(255,107,107,0.4);
+        box-shadow: 0 0 15px rgba(255,107,107,0.15);
+      }
+      
+      &::placeholder {
+        color: rgba(255,255,255,0.5);
+      }
     }
     
-    &::placeholder {
-      color: rgba(255,255,255,0.5);
+    .hide-seen-btn {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      
+      &:hover {
+        background: rgba(255,107,107,0.2);
+        border-color: rgba(255,107,107,0.4);
+      }
+      
+      &.active {
+        background: rgba(255,107,107,0.3);
+        border-color: rgba(255,107,107,0.6);
+        box-shadow: 0 0 15px rgba(255,107,107,0.2);
+      }
     }
   }
 }

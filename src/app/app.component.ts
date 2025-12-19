@@ -22,6 +22,14 @@ export class AppComponent implements OnInit {
   itemsPerPage = 50;
   totalPages = 0;
   activeArc: number | null = null;
+  hideSeenEpisodes = false;
+
+  private readonly arcRanges = {
+    1: [1, 61], 62: [62, 77], 92: [92, 130], 144: [144, 195],
+    229: [229, 263], 264: [264, 325], 326: [326, 384], 385: [385, 516],
+    517: [517, 574], 575: [575, 628], 629: [629, 746], 747: [747, 782],
+    783: [783, 877], 878: [878, 1085], 1086: [1086, 1200]
+  } as const;
 
   constructor(private http: HttpClient) {}
 
@@ -71,16 +79,26 @@ export class AppComponent implements OnInit {
   }
 
   filterEpisodes() {
-    if (!this.searchTerm) {
-      this.filteredEpisodes = this.episodes;
-    } else {
-      this.filteredEpisodes = this.episodes.filter(ep => 
+    let episodes = this.episodes;
+    
+    if (this.searchTerm) {
+      episodes = episodes.filter(ep => 
         ep.number.toString().includes(this.searchTerm) ||
         ep.title.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     }
-    this.currentPage = 1;
-    this.updatePagination();
+    
+    if (this.hideSeenEpisodes) {
+      episodes = episodes.filter(ep => !ep.seen);
+    }
+    
+    this.filteredEpisodes = episodes;
+    this.resetPagination();
+  }
+
+  toggleSeenEpisodes() {
+    this.hideSeenEpisodes = !this.hideSeenEpisodes;
+    this.filterEpisodes();
   }
 
   updatePagination() {
@@ -98,53 +116,42 @@ export class AppComponent implements OnInit {
   nextPage() {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
-      this.updatePagination();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.updatePaginationAndScroll();
     }
   }
 
   prevPage() {
     if (this.currentPage > 1) {
       this.currentPage--;
-      this.updatePagination();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.updatePaginationAndScroll();
     }
+  }
+
+  private resetPagination() {
+    this.currentPage = 1;
+    this.updatePagination();
+  }
+
+  private updatePaginationAndScroll() {
+    this.updatePagination();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   skipToEpisode(episodeNumber: number) {
     this.searchTerm = '';
     this.activeArc = episodeNumber;
     
-    // Define arc ranges
-    const arcRanges = {
-      1: [1, 61],        // East Blue
-      62: [62, 77],      // Grand Line
-      92: [92, 130],     // Alabasta
-      144: [144, 195],   // Skypiea
-      229: [229, 263],   // Water 7
-      264: [264, 325],   // Enies Lobby
-      326: [326, 384],   // Thriller Bark
-      385: [385, 516],   // Summit War
-      517: [517, 574],   // Fish-Man Island
-      575: [575, 628],   // Punk Hazard
-      629: [629, 746],   // Dressrosa
-      747: [747, 782],   // Zou
-      783: [783, 877],   // Whole Cake
-      878: [878, 1085],  // Wano
-      1086: [1086, 1200] // Egghead
-    };
+    const range = this.arcRanges[episodeNumber as keyof typeof this.arcRanges];
+    let episodes = range ? 
+      this.episodes.filter(ep => ep.number >= range[0] && ep.number <= range[1]) :
+      this.episodes;
     
-    const range = arcRanges[episodeNumber as keyof typeof arcRanges];
-    if (range) {
-      this.filteredEpisodes = this.episodes.filter(ep => 
-        ep.number >= range[0] && ep.number <= range[1]
-      );
-    } else {
-      this.filteredEpisodes = this.episodes;
+    if (this.hideSeenEpisodes) {
+      episodes = episodes.filter(ep => !ep.seen);
     }
     
-    this.currentPage = 1;
-    this.updatePagination();
+    this.filteredEpisodes = episodes;
+    this.resetPagination();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -158,9 +165,14 @@ export class AppComponent implements OnInit {
   showAllEpisodes() {
     this.searchTerm = '';
     this.activeArc = null;
-    this.filteredEpisodes = this.episodes;
-    this.currentPage = 1;
-    this.updatePagination();
+    let episodes = this.episodes;
+    
+    if (this.hideSeenEpisodes) {
+      episodes = episodes.filter(ep => !ep.seen);
+    }
+    
+    this.filteredEpisodes = episodes;
+    this.resetPagination();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

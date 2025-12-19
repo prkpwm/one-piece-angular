@@ -1,8 +1,11 @@
 <div class="app">
   <header class="header">
     <h1>One Piece Episodes</h1>
-    <div class="search">
+    <div class="controls">
       <input [(ngModel)]="searchTerm" (input)="filterEpisodes()" placeholder="Search episodes...">
+      <button class="hide-seen-btn" (click)="toggleSeenEpisodes()" [class.active]="hideSeenEpisodes">
+        {{hideSeenEpisodes ? 'Show Watched' : 'Hide Watched'}}
+      </button>
     </div>
   </header>
   
