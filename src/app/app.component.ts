@@ -36,6 +36,10 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    const hideSeenState = localStorage.getItem('hideSeenEpisodes');
+    if (hideSeenState) {
+      this.hideSeenEpisodes = JSON.parse(hideSeenState);
+    }
     this.loadSeasons();
   }
 
@@ -98,6 +102,7 @@ export class AppComponent implements OnInit {
 
   toggleSeenEpisodes() {
     this.hideSeenEpisodes = !this.hideSeenEpisodes;
+    localStorage.setItem('hideSeenEpisodes', JSON.stringify(this.hideSeenEpisodes));
     this.filterEpisodes();
   }
 
