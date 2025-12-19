@@ -76,6 +76,14 @@
         border-color: rgba(255,107,107,0.6);
         box-shadow: 0 0 15px rgba(255,107,107,0.2);
       }
+      
+      .mobile-text {
+        display: none;
+      }
+      
+      .desktop-text {
+        display: inline;
+      }
     }
   }
 }
@@ -294,14 +302,51 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    
+    .controls {
+      gap: 8px;
+      width: 100%;
+      
+      input {
+        flex: 1;
+        min-width: 0;
+        font-size: 12px;
+        padding: 10px 12px;
+        height: 40px;
+        box-sizing: border-box;
+      }
+      
+      .hide-seen-btn {
+        padding: 10px 12px;
+        font-size: 12px;
+        min-width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        
+        .desktop-text {
+          display: none;
+        }
+        
+        .mobile-text {
+          display: inline;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
   .episodes-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
-  }
-  
-  .header .search input {
-    width: 100%;
-    max-width: 300px;
   }
   
   .pagination {

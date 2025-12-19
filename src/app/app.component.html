@@ -4,7 +4,8 @@
     <div class="controls">
       <input [(ngModel)]="searchTerm" (input)="filterEpisodes()" placeholder="Search episodes...">
       <button class="hide-seen-btn" (click)="toggleSeenEpisodes()" [class.active]="hideSeenEpisodes">
-        {{hideSeenEpisodes ? 'Show Watched' : 'Hide Watched'}}
+        <span class="desktop-text">{{hideSeenEpisodes ? 'Show Watched' : 'Hide Watched'}}</span>
+        <span class="mobile-text">{{hideSeenEpisodes ? '👻' : '🔥'}}</span>
       </button>
     </div>
   </header>
@@ -13,7 +14,7 @@
     <div class="episodes-grid">
       <div *ngFor="let episode of paginatedEpisodes" class="episode-card" [class.seen]="episode.seen" (click)="playEpisode(episode)">
         <div class="episode-image">
-          <img [src]="episode.imageUrl" [alt]="'Episode ' + episode.number" loading="lazy">
+          <img [src]="episode.imageUrl" [alt]="'Episode ' + episode.number" loading="lazy" crossorigin="anonymous" referrerpolicy="no-referrer">
           <div class="play-overlay">
             <div class="play-button">▶</div>
           </div>
