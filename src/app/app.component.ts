@@ -25,10 +25,12 @@ export class AppComponent implements OnInit {
   hideSeenEpisodes = false;
 
   private readonly arcRanges = {
-    1: [1, 61], 62: [62, 77], 92: [92, 130], 144: [144, 195],
-    229: [229, 263], 264: [264, 325], 326: [326, 384], 385: [385, 516],
-    517: [517, 574], 575: [575, 628], 629: [629, 746], 747: [747, 782],
-    783: [783, 877], 878: [878, 1085], 1086: [1086, 1200]
+    1: [1, 52], 53: [53, 76], 77: [77, 92], 93: [93, 132], 133: [133, 144],
+    145: [145, 196], 197: [197, 228], 229: [229, 264], 265: [265, 336],
+    337: [337, 384], 385: [385, 404], 405: [405, 420], 421: [421, 456],
+    457: [457, 516], 517: [517, 578], 579: [579, 628], 629: [629, 750],
+    751: [751, 782], 783: [783, 892], 893: [893, 1100], 1101: [1101, 1165],
+    1166: [1166, 1210], 1211: [1211, 1240], 1241: [1241, 1280]
   } as const;
 
   constructor(private http: HttpClient) {}
@@ -61,19 +63,17 @@ export class AppComponent implements OnInit {
     });
   }
   generateEpisodes(seasons: Season[]) {
-    let episodeCounter = 1;
     seasons.forEach(season => {
-      for (let i = 1; i <= season.episodes; i++) {
-        const episodeNum = episodeCounter.toString().padStart(3, '0');
+      for (let i = season.episodeStart; i <= season.episodeEnd; i++) {
+        const episodeNum = i.toString().padStart(3, '0');
         const img = season.images[0];
         this.episodes.push({
-          number: episodeCounter,
-          title: `${season.title} - Episode ${i}`,
+          number: i,
+          title: `${season.title} - Episode ${i - season.episodeStart + 1}`,
           embedUrl: `site:trueid.net One Piece EP ${episodeNum} embed`,
           imageUrl: img,
           seen: false
         });
-        episodeCounter++;
       }
     });
   }

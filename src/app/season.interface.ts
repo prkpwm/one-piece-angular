@@ -1,7 +1,8 @@
 export interface Season {
   season: number;
   title: string;
-  episodes: number;
+  episodeStart: number;
+  episodeEnd: number;
   images: string[];
 }
 

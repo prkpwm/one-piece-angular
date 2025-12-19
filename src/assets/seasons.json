@@ -2,202 +2,218 @@
   "seasons": [
     {
       "season": 1,
-      "title": "East Blue Saga",
-      "episodes": 61,
+      "title": "East Blue",
+      "episodeStart": 1,
+      "episodeEnd": 52,
       "images": [
-        "https://m.media-amazon.com/images/M/MV5BODVkNmExYmMtY2MyYS00NzZiLWE3NjUtZDI4ZWY4NGRmZDVlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        "https://i.pinimg.com/736x/ae/08/e2/ae08e21372651c4a04913a8e6211cb49.jpg",
-        "https://i.pinimg.com/736x/d1/9b/05/d19b05aa7a8c8c8883a82a7a99f8e60e.jpg",
-        "https://spinesofgolden.wordpress.com/wp-content/uploads/2015/06/zoro.jpg?w=584"
+        "./assets/East Blue Saga_1.jpg"
       ]
     },
     {
       "season": 2,
       "title": "Entering the Grand Line",
-      "episodes": 16,
+      "episodeStart": 53,
+      "episodeEnd": 76,
       "images": [
-        "https://static.tvtropes.org/pmwiki/pub/images/chapter_103.png",
-        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2023/05/one-piece-s-laboon-has-a-sadder-backstory-than-many-fans-realize.jpg",
-        "https://www.escapistmagazine.com/wp-content/uploads/2024/08/One-Piece-Whiskey-Peak-Zoro.jpg"
+        "./assets/Entering the Grand Line.png"
       ]
     },
     {
       "season": 3,
-      "title": "Drum Island (Chopper)",
-      "episodes": 14,
+      "title": "Drum Island (Snow Island)",
+      "episodeStart": 77,
+      "episodeEnd": 92,
       "images": [
-        "https://www.thepopverse.com/_next/image?q=75&url=https%3A%2F%2Fmedia.thepopverse.com%2Fmedia%2Fluffy-holding-a-flag-in-one-piece-drum-island-arc-quilvapn5eqfdl40hwkdpwausq.jpg&w=1280",
-        "https://media.thepopverse.com/media/tony-tony-chopper-from-one-piece-t0mkr5fnn5tevppawlpiwuqtca.jpg",
-        "https://i.pinimg.com/736x/f7/63/96/f76396ae8946eeee5c5e66cc50fc0dbb.jpg"
+        "./assets/Drum Island.png"
       ]
     },
     {
       "season": 4,
-      "title": "Alabasta Saga",
-      "episodes": 39,
+      "title": "Alabasta",
+      "episodeStart": 93,
+      "episodeEnd": 132,
       "images": [
-        "https://m.media-amazon.com/images/M/MV5BMTc2MGRkZTgtYmI2My00M2VjLTlmNTItYmJiNTY3ZmNkNTIyXkEyXkFqcGc@._V1_.jpg",
-        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2024/09/crocodile.jpg?fit=crop&h=675&w=1200",
-        "https://m.media-amazon.com/images/M/MV5BNGNjMmE1ZWMtNDFmMC00OTY4LTliOWYtYzRjOWYxNDE4ZDI1XkEyXkFqcGc@._V1_.jpg"
+        "./assets/Alabasta Saga_1.jpg"
       ]
     },
     {
       "season": 5,
-      "title": "Post-Alabasta / Filler",
-      "episodes": 13,
+      "title": "Rainbow Arc (Filler)",
+      "episodeStart": 133,
+      "episodeEnd": 144,
       "images": [
-        "https://d32qys9a6wm9no.cloudfront.net/images/tvs/poster/02/6189d6d1ab1864e7c976c76ba43fe94a_300x442.jpg?t=1697098501",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/02/best-one-piece-filler-arcs.jpg?fit=crop&h=900&w=1600"
+        "./assets/Rainbow Arc.png"
       ]
     },
     {
       "season": 6,
-      "title": "Skypiea Saga",
-      "episodes": 52,
+      "title": "Skypiea (Sky Island)",
+      "episodeStart": 145,
+      "episodeEnd": 196,
       "images": [
-        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2023/09/one-piece-skypiea-arc.jpg",
-        "https://static0.colliderimages.com/wordpress/wp-content/uploads/2023/09/one-piece-strongest-villain.jpg",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/05/one-piece-odyssey-skypeia-going-merry-1.jpg?fit=crop&h=900&w=1600"
+        "./assets/Skypiea Saga_1.jpg"
       ]
     },
     {
       "season": 7,
-      "title": "G-8 & Foxy",
-      "episodes": 33,
+      "title": "G-8 & Davy Back Fight",
+      "episodeStart": 197,
+      "episodeEnd": 228,
       "images": [
-        "https://i.ytimg.com/vi/V7eMXRETwsI/sddefault.jpg",
-        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2024/06/foxy-pirates-in-the-roller-rink-1.png",
-        "https://m.media-amazon.com/images/I/81jqxtpSqpL._UF1000,1000_QL80_.jpg"
+        "./assets/G-8 & Foxy_1.jpg"
       ]
     },
     {
       "season": 8,
-      "title": "Water 7",
-      "episodes": 35,
+      "title": "Water Seven",
+      "episodeStart": 229,
+      "episodeEnd": 264,
       "images": [
-        "https://m.media-amazon.com/images/I/81XK8cY3XqL._UF1000,1000_QL80_.jpg",
-        "https://m.media-amazon.com/images/I/A1rgjhpYiUL._UF1000,1000_QL80_.jpg",
-        "https://ichef.bbci.co.uk/images/ic/640x360/p0jv2j46.jpg"
+        "./assets/Water 7_1.jpg"
       ]
     },
     {
       "season": 9,
       "title": "Enies Lobby",
-      "episodes": 62,
+      "episodeStart": 265,
+      "episodeEnd": 336,
       "images": [
-        "https://media.themoviedb.org/t/p/w500/7y6yoAIepNVrNTLMxgHEEgjEEge.jpg",
-        "https://i.ytimg.com/vi/OujdWHtqdss/hqdefault.jpg",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/02/one-piece-gear-second-luffy-inspiration-oda.jpg?fit=crop&h=900&w=1600"
+        "./assets/Enies Lobby_1.jpg"
       ]
     },
     {
       "season": 10,
       "title": "Thriller Bark",
-      "episodes": 45,
+      "episodeStart": 337,
+      "episodeEnd": 384,
       "images": [
-        "https://media.themoviedb.org/t/p/w500/gCWPlCfElGdGtl6xryoyXcadNd9.jpg"
+        "./assets/Thriller Bark.jpg"
       ]
     },
     {
       "season": 11,
-      "title": "Summit War Saga",
-      "episodes": 132,
+      "title": "Sabaody Archipelago",
+      "episodeStart": 385,
+      "episodeEnd": 404,
       "images": [
-        "https://i.ytimg.com/vi/hhHhe1G5gSE/maxresdefault.jpg",
-        "https://static.tvtropes.org/pmwiki/pub/images/screen_shot_2018_05_12_at_81621_am.png",
-        "https://images.steamusercontent.com/ugc/913541295204675301/77EB83314CA85E2C4D15C20244AFDE6688805C08/?ima=fit&imcolor=%23000000&impolicy=Letterbox&imw=512&letterbox=false"
+        "./assets/Sabaody Archipelago.png"
       ]
     },
     {
       "season": 12,
-      "title": "Fish-Man Island",
-      "episodes": 58,
+      "title": "Amazon Lily",
+      "episodeStart": 405,
+      "episodeEnd": 420,
       "images": [
-        "https://m.media-amazon.com/images/M/MV5BYzRiYTcwM2YtMTE1OC00MGFkLTlmZjctMjI0YjQ5MWY1MTAwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-        "https://birdsofherme.wordpress.com/wp-content/uploads/2018/09/hody-3.jpg?w=1400",
-        "https://12dimension.wordpress.com/wp-content/uploads/2021/09/one_piece_v62_ch612_p011-012-edit.jpg"
+        "./assets/Amazon Lily.png"
       ]
     },
     {
       "season": 13,
+      "title": "Impel Down",
+      "episodeStart": 421,
+      "episodeEnd": 456,
+      "images": [
+        "./assets/Impel Down.png"
+      ]
+    },
+    {
+      "season": 14,
+      "title": "Marineford War",
+      "episodeStart": 457,
+      "episodeEnd": 516,
+      "images": [
+        "./assets/Summit War Saga_1.jpg"
+      ]
+    },
+    {
+      "season": 15,
+      "title": "Fish-Man Island",
+      "episodeStart": 517,
+      "episodeEnd": 578,
+      "images": [
+        "./assets/Fish-Man Island_1.jpg"
+      ]
+    },
+    {
+      "season": 16,
       "title": "Punk Hazard",
-      "episodes": 54,
+      "episodeStart": 579,
+      "episodeEnd": 628,
       "images": [
         "./assets/Punk Hazard.jpg"
       ]
     },
     {
-      "season": 14,
+      "season": 17,
       "title": "Dressrosa",
-      "episodes": 118,
+      "episodeStart": 629,
+      "episodeEnd": 750,
       "images": [
         "./assets/Dressrosa.jpg"
       ]
     },
     {
-      "season": 15,
+      "season": 18,
       "title": "Zou",
-      "episodes": 36,
+      "episodeStart": 751,
+      "episodeEnd": 782,
       "images": [
         "./assets/Zou.png"
       ]
     },
     {
-      "season": 16,
+      "season": 19,
       "title": "Whole Cake Island",
-      "episodes": 95,
+      "episodeStart": 783,
+      "episodeEnd": 892,
       "images": [
         "./assets/Whole Cake Island.jpg"
       ]
     },
     {
-      "season": 17,
-      "title": "Wano Country",
-      "episodes": 208,
-      "images": [
-        "https://images.justwatch.com/poster/304340302/s718/season-21.jpg",
-        "https://m.media-amazon.com/images/I/61P-kTLkb5L._AC_UF894,1000_QL80_.jpg",
-        "https://static.beebom.com/wp-content/uploads/2025/01/Luffys-Hito-Hito-no-Mi-Model-Nika.jpg?quality=75&w=1250"
-      ]
-    },
-    {
-      "season": 18,
-      "title": "Egghead Island (Future Island Arc)",
-      "episodes": 65,
-      "images": [
-        "https://upload.wikimedia.org/wikipedia/en/2/21/One_Piece_DVD_21.png",
-        "https://i.pinimg.com/736x/f2/fc/b0/f2fcb00565da405d54597adfe6ff090b.jpg",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/09/egghead-island-design-one-piece-featured.jpg?fit=crop&h=900&w=1600"
-      ]
-    },
-    {
-      "season": 19,
-      "title": "Egghead Incident / CP0",
-      "episodes": 45,
-      "images": [
-        "https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/11/cp0.jpg",
-        "https://i.ebayimg.com/images/g/ux8AAOSwJAtnMlV-/s-l1200.jpg",
-        "https://titipjepang.com/wp-content/uploads/2025/05/POTJ-0525450.jpg"
-      ]
-    },
-    {
       "season": 20,
-      "title": "World in Chaos (Reverie Aftermath)",
-      "episodes": 30,
+      "title": "Wano Country",
+      "episodeStart": 893,
+      "episodeEnd": 1100,
       "images": [
-        "https://comicbook.com/wp-content/uploads/sites/4/2025/02/One-Piece-Mural.jpeg?w=1024",
-        "https://i.imgur.com/6MqCp4T.png",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/05/one-piece-imu-gender-woman-man-lily-vivi.jpg?fit=crop&h=900&w=1600"
+        "./assets/Wano Country_1.jpg"
       ]
     },
     {
       "season": 21,
-      "title": "Yonko & Final Saga Setup",
-      "episodes": 40,
+      "title": "Egghead Island (Future Island Arc)",
+      "episodeStart": 1101,
+      "episodeEnd": 1165,
       "images": [
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/07/one-piece-final-saga-key-players.jpg",
-        "https://i.ytimg.com/vi/LSLL0zXzfOk/maxresdefault.jpg",
-        "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/11/featured-one-piece-episode-1082-shanks-power.jpg"
+        "./assets/Egghead.png"
+      ]
+    },
+    {
+      "season": 22,
+      "title": "Egghead Incident / CP0",
+      "episodeStart": 1166,
+      "episodeEnd": 1210,
+      "images": [
+        "./assets/Egghead.png"
+      ]
+    },
+    {
+      "season": 23,
+      "title": "World in Chaos (Reverie Aftermath)",
+      "episodeStart": 1211,
+      "episodeEnd": 1240,
+      "images": [
+        "./assets/World in Chaos (Reverie Aftermath).jpeg"
+      ]
+    },
+    {
+      "season": 24,
+      "title": "Yonko & Final Saga Setup",
+      "episodeStart": 1241,
+      "episodeEnd": 1280,
+      "images": [
+        "./assets/Yonko & Final Saga Setup.jpg"
       ]
     }
   ]
