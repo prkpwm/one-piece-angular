@@ -1,0 +1,27 @@
+<div class="app">
+  <header class="header">
+    <h1>One Piece Episodes</h1>
+    <div class="search">
+      <input [(ngModel)]="searchTerm" (input)="filterEpisodes()" placeholder="Search episodes...">
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="episodes-grid">
+      <div *ngFor="let episode of filteredEpisodes" class="episode-card" (click)="playEpisode(episode)">
+        <div class="episode-image">
+          <img [src]="episode.imageUrl" [alt]="'Episode ' + episode.number" loading="lazy">
+          <div class="play-overlay">
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="episode-info">
+          <h3>EP {{episode.number.toString().padStart(3, '0')}}</h3>
+          <p>{{episode.title}}</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+</div>
