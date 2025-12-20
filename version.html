@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Angular - Version Info</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #0f0f23; color: white; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: #ff6b6b; }
+        .version { font-size: 2em; color: #4ecdc4; margin: 20px 0; }
+        .info { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>One Piece Episode Viewer</h1>
+        <div class="version">Version 1.0.0</div>
+        <div class="info">
+            <p><strong>Build Date:</strong> <span id="buildDate"></span></p>
+            <p><strong>Last Commit:</strong> <span id="commitHash"></span></p>
+            <p><strong>Episodes:</strong> 1280+</p>
+            <p><strong>Seasons:</strong> 24</p>
+        </div>
+        <div class="info">
+            <h3>Features:</h3>
+            <ul>
+                <li>Netflix-style episode grid</li>
+                <li>Search and filter functionality</li>
+                <li>Season-based navigation</li>
+                <li>localStorage preferences</li>
+                <li>Accessibility improvements</li>
+                <li>SEO optimization</li>
+                <li>Improved search patterns</li>
+            </ul>
+        </div>
+    </div>
+    <script src="deployment-info.js"></script>
+    <script>
+        if (typeof DEPLOYMENT_INFO !== 'undefined') {
+            document.getElementById('buildDate').textContent = DEPLOYMENT_INFO.buildDate;
+            document.getElementById('commitHash').textContent = DEPLOYMENT_INFO.commitHash + ' (#' + DEPLOYMENT_INFO.buildNumber + ')';
+        } else {
+            document.getElementById('buildDate').textContent = new Date().toISOString().split('T')[0];
+            document.getElementById('commitHash').textContent = 'Development';
+        }
+    </script>
+</body>
+</html>
