@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Episode } from './episode.interface';
-import { Season, SeriesData } from './season.interface';
+import { Season } from './season.interface';
+import { ARC_RANGES } from './arc-ranges.model';
+import { SEASONS_DATA } from './seasons.model';
 
 @Component({
   selector: 'app-root',
@@ -21,24 +22,20 @@ export class AppComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 50;
   totalPages = 0;
-  activeArc: number | null = null;
+  activeArc: string | null = null;
   hideSeenEpisodes = false;
 
-  private readonly arcRanges = {
-    1: [1, 52], 53: [53, 76], 77: [77, 92], 93: [93, 132], 133: [133, 144],
-    145: [145, 196], 197: [197, 228], 229: [229, 264], 265: [265, 336],
-    337: [337, 384], 385: [385, 404], 405: [405, 420], 421: [421, 456],
-    457: [457, 516], 517: [517, 578], 579: [579, 628], 629: [629, 750],
-    751: [751, 782], 783: [783, 892], 893: [893, 1100], 1101: [1101, 1165],
-    1166: [1166, 1210], 1211: [1211, 1240], 1241: [1241, 1280]
-  } as const;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit() {
     const hideSeenState = localStorage.getItem('hideSeenEpisodes');
     if (hideSeenState) {
       this.hideSeenEpisodes = JSON.parse(hideSeenState);
+    }
+    const pageSize = localStorage.getItem('itemsPerPage');
+    if (pageSize) {
+      this.itemsPerPage = +JSON.parse(pageSize);
     }
     this.loadSeasons();
   }
@@ -59,12 +56,9 @@ export class AppComponent implements OnInit {
   }
 
   loadSeasons() {
-    this.http.get<SeriesData>('assets/seasons.json').subscribe(data => {
-      this.generateEpisodes(data.seasons);
-      this.loadSeenEpisodes();
-      this.filteredEpisodes = this.episodes;
-      this.updatePagination();
-    });
+    this.generateEpisodes(SEASONS_DATA);
+    this.loadSeenEpisodes();
+    this.filterEpisodes();
   }
   generateEpisodes(seasons: Season[]) {
     seasons.forEach(season => {
@@ -107,6 +101,7 @@ export class AppComponent implements OnInit {
   }
 
   updatePagination() {
+    this.itemsPerPage = +this.itemsPerPage; // Ensure it's a number
     this.totalPages = Math.ceil(this.filteredEpisodes.length / this.itemsPerPage);
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
@@ -116,6 +111,12 @@ export class AppComponent implements OnInit {
   goToPage(page: number) {
     this.currentPage = page;
     this.updatePagination();
+  }
+
+  changePageSize() {
+    this.itemsPerPage = +this.itemsPerPage; // Convert to number
+    localStorage.setItem('itemsPerPage', JSON.stringify(this.itemsPerPage));
+    this.resetPagination();
   }
 
   nextPage() {
@@ -142,11 +143,11 @@ export class AppComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  skipToEpisode(episodeNumber: number) {
+  skipToSeason(seasonName: string) {
     this.searchTerm = '';
-    this.activeArc = episodeNumber;
+    this.activeArc = seasonName;
     
-    const range = this.arcRanges[episodeNumber as keyof typeof this.arcRanges];
+    const range = ARC_RANGES[seasonName as keyof typeof ARC_RANGES];
     let episodes = range ? 
       this.episodes.filter(ep => ep.number >= range[0] && ep.number <= range[1]) :
       this.episodes;

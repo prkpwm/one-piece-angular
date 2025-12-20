@@ -54,6 +54,36 @@
       }
     }
     
+    .page-size-select {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      outline: none;
+      min-width: 70px;
+      
+      &:hover {
+        background: rgba(255,107,107,0.1);
+        border-color: rgba(255,107,107,0.3);
+      }
+      
+      &:focus {
+        border-color: rgba(255,107,107,0.4);
+        box-shadow: 0 0 15px rgba(255,107,107,0.15);
+      }
+      
+      option {
+        background: #1a1a2e;
+        color: white;
+        padding: 8px;
+      }
+    }
+    
     .hide-seen-btn {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);

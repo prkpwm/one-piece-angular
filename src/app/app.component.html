@@ -3,6 +3,12 @@
     <h1>One Piece Episodes</h1>
     <div class="controls">
       <input [(ngModel)]="searchTerm" (input)="filterEpisodes()" placeholder="Search episodes...">
+      <select class="page-size-select" [(ngModel)]="itemsPerPage" (change)="changePageSize()">
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+      </select>
       <button class="hide-seen-btn" (click)="toggleSeenEpisodes()" [class.active]="hideSeenEpisodes">
         <span class="desktop-text">{{hideSeenEpisodes ? 'Show Watched' : 'Hide Watched'}}</span>
         <span class="mobile-text">{{hideSeenEpisodes ? '👻' : '🔥'}}</span>
@@ -38,30 +44,30 @@
       <h3>Season</h3>
       <div class="arc-buttons">
         <button (click)="showAllEpisodes()" class="all-btn" [class.active]="activeArc === null">Show All</button>
-        <button (click)="skipToEpisode(1)" [class.active]="activeArc === 1">East Blue</button>
-        <button (click)="skipToEpisode(53)" [class.active]="activeArc === 53">Grand Line</button>
-        <button (click)="skipToEpisode(77)" [class.active]="activeArc === 77">Drum Island</button>
-        <button (click)="skipToEpisode(93)" [class.active]="activeArc === 93">Alabasta</button>
-        <button (click)="skipToEpisode(133)" [class.active]="activeArc === 133">Rainbow Arc</button>
-        <button (click)="skipToEpisode(145)" [class.active]="activeArc === 145">Skypiea</button>
-        <button (click)="skipToEpisode(197)" [class.active]="activeArc === 197">G-8 & Davy Back</button>
-        <button (click)="skipToEpisode(229)" [class.active]="activeArc === 229">Water 7</button>
-        <button (click)="skipToEpisode(265)" [class.active]="activeArc === 265">Enies Lobby</button>
-        <button (click)="skipToEpisode(337)" [class.active]="activeArc === 337">Thriller Bark</button>
-        <button (click)="skipToEpisode(385)" [class.active]="activeArc === 385">Sabaody</button>
-        <button (click)="skipToEpisode(405)" [class.active]="activeArc === 405">Amazon Lily</button>
-        <button (click)="skipToEpisode(421)" [class.active]="activeArc === 421">Impel Down</button>
-        <button (click)="skipToEpisode(457)" [class.active]="activeArc === 457">Marineford</button>
-        <button (click)="skipToEpisode(517)" [class.active]="activeArc === 517">Fish-Man Island</button>
-        <button (click)="skipToEpisode(579)" [class.active]="activeArc === 579">Punk Hazard</button>
-        <button (click)="skipToEpisode(629)" [class.active]="activeArc === 629">Dressrosa</button>
-        <button (click)="skipToEpisode(751)" [class.active]="activeArc === 751">Zou</button>
-        <button (click)="skipToEpisode(783)" [class.active]="activeArc === 783">Whole Cake</button>
-        <button (click)="skipToEpisode(893)" [class.active]="activeArc === 893">Wano</button>
-        <button (click)="skipToEpisode(1101)" [class.active]="activeArc === 1101">Egghead Island</button>
-        <button (click)="skipToEpisode(1166)" [class.active]="activeArc === 1166">Egghead Incident</button>
-        <button (click)="skipToEpisode(1211)" [class.active]="activeArc === 1211">World in Chaos</button>
-        <button (click)="skipToEpisode(1241)" [class.active]="activeArc === 1241">Final Saga</button>
+        <button (click)="skipToSeason('East Blue')" [class.active]="activeArc === 'East Blue'">East Blue</button>
+        <button (click)="skipToSeason('Entering the Grand Line')" [class.active]="activeArc === 'Entering the Grand Line'">Grand Line</button>
+        <button (click)="skipToSeason('Drum Island (Snow Island)')" [class.active]="activeArc === 'Drum Island (Snow Island)'">Drum Island</button>
+        <button (click)="skipToSeason('Alabasta')" [class.active]="activeArc === 'Alabasta'">Alabasta</button>
+        <button (click)="skipToSeason('Rainbow Arc (Filler)')" [class.active]="activeArc === 'Rainbow Arc (Filler)'">Rainbow Arc</button>
+        <button (click)="skipToSeason('Skypiea (Sky Island)')" [class.active]="activeArc === 'Skypiea (Sky Island)'">Skypiea</button>
+        <button (click)="skipToSeason('G-8 & Davy Back Fight')" [class.active]="activeArc === 'G-8 & Davy Back Fight'">G-8 & Davy Back</button>
+        <button (click)="skipToSeason('Water Seven')" [class.active]="activeArc === 'Water Seven'">Water 7</button>
+        <button (click)="skipToSeason('Enies Lobby')" [class.active]="activeArc === 'Enies Lobby'">Enies Lobby</button>
+        <button (click)="skipToSeason('Thriller Bark')" [class.active]="activeArc === 'Thriller Bark'">Thriller Bark</button>
+        <button (click)="skipToSeason('Sabaody Archipelago')" [class.active]="activeArc === 'Sabaody Archipelago'">Sabaody</button>
+        <button (click)="skipToSeason('Amazon Lily')" [class.active]="activeArc === 'Amazon Lily'">Amazon Lily</button>
+        <button (click)="skipToSeason('Impel Down')" [class.active]="activeArc === 'Impel Down'">Impel Down</button>
+        <button (click)="skipToSeason('Marineford War')" [class.active]="activeArc === 'Marineford War'">Marineford</button>
+        <button (click)="skipToSeason('Fish-Man Island')" [class.active]="activeArc === 'Fish-Man Island'">Fish-Man Island</button>
+        <button (click)="skipToSeason('Punk Hazard')" [class.active]="activeArc === 'Punk Hazard'">Punk Hazard</button>
+        <button (click)="skipToSeason('Dressrosa')" [class.active]="activeArc === 'Dressrosa'">Dressrosa</button>
+        <button (click)="skipToSeason('Zou')" [class.active]="activeArc === 'Zou'">Zou</button>
+        <button (click)="skipToSeason('Whole Cake Island')" [class.active]="activeArc === 'Whole Cake Island'">Whole Cake</button>
+        <button (click)="skipToSeason('Wano Country')" [class.active]="activeArc === 'Wano Country'">Wano</button>
+        <button (click)="skipToSeason('Egghead Island (Future Island Arc)')" [class.active]="activeArc === 'Egghead Island (Future Island Arc)'">Egghead Island</button>
+        <button (click)="skipToSeason('Egghead Incident / CP0')" [class.active]="activeArc === 'Egghead Incident / CP0'">Egghead Incident</button>
+        <button (click)="skipToSeason('World in Chaos (Reverie Aftermath)')" [class.active]="activeArc === 'World in Chaos (Reverie Aftermath)'">World in Chaos</button>
+        <button (click)="skipToSeason('Yonko & Final Saga Setup')" [class.active]="activeArc === 'Yonko & Final Saga Setup'">Final Saga</button>
       </div>
     </div>
   </footer>
