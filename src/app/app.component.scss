@@ -237,6 +237,16 @@
     background: rgba(0,0,0,0.2);
     backdrop-filter: blur(10px);
     
+    .episode-number {
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
     h3 {
       margin: 0 0 10px 0;
       font-size: 1.3rem;
