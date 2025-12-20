@@ -22,6 +22,15 @@ jobs:
     - name: Install dependencies
       run: npm install
       
+    - name: Generate deployment info
+      run: |
+        echo "const DEPLOYMENT_INFO = {
+          buildDate: '$(date -u +"%Y-%m-%dT%H:%M:%SZ")',
+          commitHash: '$(git rev-parse --short HEAD)',
+          commitMessage: '$(git log -1 --pretty=%B | head -1)',
+          buildNumber: '${{ github.run_number }}'
+        };" > src/deployment-info.js
+      
     - name: Build
       run: npm run build -- --base-href=/one-piece-angular/
       
