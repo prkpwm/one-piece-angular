@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
         this.episodes.push({
           number: i,
           title: `${season.title} - Episode ${i - season.episodeStart + 1}`,
-          embedUrl: `site:trueid.net One Piece EP ${episodeNum} embed`,
+          embedUrl: `site:trueid.net "One Piece" "EP ${episodeNum}" (embed OR "EP ${episodeNum}")`,
           imageUrl: img,
           seen: false
         });

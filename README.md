@@ -35,4 +35,4 @@ npm run dev
 
 ## Episode URLs
 
-Episodes use the pattern: `site:trueid.net One Piece EP {number} embed`
+Episodes use the pattern: `site:trueid.net "One Piece" "EP {number}" (embed OR "EP {number}")`
