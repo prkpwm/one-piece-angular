@@ -3,7 +3,7 @@
 A Netflix-style Angular application for browsing and watching One Piece episodes.
 
 🌐 **Live Demo**: https://prkpwm.github.io/one-piece-angular/
-
+![alt text](image.png)
 ## Features
 
 - 📺 Episodes 001-1000 with Netflix-like grid layout
