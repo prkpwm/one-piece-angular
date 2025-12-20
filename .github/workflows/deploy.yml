@@ -34,6 +34,11 @@ jobs:
     - name: Build
       run: npm run build -- --base-href=/one-piece-angular/
       
+    - name: Copy version files
+      run: |
+        cp src/version.html dist/one-piece-viewer/
+        cp src/deployment-info.js dist/one-piece-viewer/
+      
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
