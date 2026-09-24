@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
   totalPages = 0;
   activeArc: string | null = null;
   hideSeenEpisodes = false;
+  historyStart: number | null = 1;
+  historyEnd: number | null = null;
+  historyMessage = '';
 
 
   constructor() {}
@@ -50,9 +53,46 @@ export class AppComponent implements OnInit {
     }
   }
 
-  saveSeenEpisodes() {
-    const seenNumbers = this.episodes.filter(ep => ep.seen).map(ep => ep.number);
-    localStorage.setItem('seenEpisodes', JSON.stringify(seenNumbers));
+  saveSeenEpisodes(unseenNumbers: number[] = []) {
+    // Keep history pasted into storage (or added in another tab) since loading.
+    const seenNumbers = new Set<number>(
+      this.episodes.filter(ep => ep.seen).map(ep => ep.number)
+    );
+    const stored = localStorage.getItem('seenEpisodes');
+    if (stored) {
+      const storedNumbers: number[] = JSON.parse(stored);
+      storedNumbers.forEach(number => seenNumbers.add(number));
+    }
+    unseenNumbers.forEach(number => seenNumbers.delete(number));
+    localStorage.setItem('seenEpisodes', JSON.stringify([...seenNumbers].sort((a, b) => a - b)));
+    this.episodes.forEach(ep => {
+      ep.seen = seenNumbers.has(ep.number);
+    });
+  }
+
+  get historyRangeValid(): boolean {
+    return this.historyStart !== null && this.historyEnd !== null &&
+      Number.isInteger(this.historyStart) && Number.isInteger(this.historyEnd) &&
+      this.historyStart >= 1 && this.historyEnd >= this.historyStart &&
+      this.episodes.some(ep => ep.number === this.historyEnd);
+  }
+
+  setHistoryRange(seen: boolean) {
+    if (!this.historyRangeValid) return;
+    this.loadSeenEpisodes();
+    const episodes = this.episodes.filter(ep =>
+      ep.number >= this.historyStart! && ep.number <= this.historyEnd!);
+    episodes.forEach(ep => ep.seen = seen);
+    this.saveSeenEpisodes(seen ? [] : episodes.map(ep => ep.number));
+    this.filterEpisodes();
+    this.historyMessage = `Episodes ${this.historyStart}–${this.historyEnd} marked ${seen ? 'watched' : 'unwatched'}.`;
+  }
+
+  toggleEpisodeSeen(episode: Episode) {
+    this.loadSeenEpisodes();
+    episode.seen = !episode.seen;
+    this.saveSeenEpisodes(episode.seen ? [] : [episode.number]);
+    this.filterEpisodes();
   }
 
   loadSeasons() {
@@ -78,6 +118,10 @@ export class AppComponent implements OnInit {
 
   filterEpisodes() {
     let episodes = this.episodes;
+    const range = ARC_RANGES[this.activeArc as keyof typeof ARC_RANGES];
+    if (range) {
+      episodes = episodes.filter(ep => ep.number >= range[0] && ep.number <= range[1]);
+    }
     
     if (this.searchTerm) {
       episodes = episodes.filter(ep => 

@@ -122,6 +122,40 @@
   padding: 20px;
 }
 
+.history-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+
+  label { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  input { width: 90px; }
+  span { flex-basis: 100%; }
+  span:empty { display: none; }
+}
+
+.history-controls input,
+.history-controls button,
+.seen-toggle {
+  background: #24243c;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font: inherit;
+}
+
+.history-controls button,
+.seen-toggle {
+  cursor: pointer;
+  &:hover:not(:disabled) { background: #38465b; }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+}
+
 .episodes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
