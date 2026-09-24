@@ -1,6 +1,6 @@
 const DEPLOYMENT_INFO = {
-  buildDate: '2025-12-20T17:48:06Z',
-  commitHash: 'e55a99a',
-  commitMessage: 'Adjust build date to UTC+7 timezone',
-  buildNumber: '29'
+  buildDate: '2026-09-24T10:19:23Z',
+  commitHash: '1ba9667',
+  commitMessage: 'fix: preserve seen history and support watched ranges',
+  buildNumber: '30'
 };
